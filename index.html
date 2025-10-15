@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combustible de Plástico Cero - Pitch de Inversión</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* --- NUEVA PALETA: SLATE (PIZARRA) Y AMBER (DORADO) --- */
+        :root {
+            --color-primary-dark: #1e293b; /* Slate 900 - Títulos, Texto Principal, Fondo Header */
+            --color-accent-gold: #F59E0B; /* Amber 500 - Acentos, CTAs, Highlights */
+            --color-secondary-light: #E2E8F0; /* Slate 200 - Fondo Secundario */
+        }
+        
+        .bg-primary-dark { background-color: var(--color-primary-dark); }
+        .bg-accent-gold { background-color: var(--color-accent-gold); }
+        .bg-secondary-light { background-color: var(--color-secondary-light); }
+        .text-primary-dark { color: var(--color-primary-dark); }
+        .border-accent-gold { border-color: var(--color-accent-gold); }
+        
+        /* Ajuste de sombra para reflejar el nuevo color oscuro */
+        .shadow-custom { box-shadow: 0 10px 15px -3px rgba(30, 41, 59, 0.2), 0 4px 6px -2px rgba(30, 41, 59, 0.1); }
+        
+        /* Nuevo estilo para reemplazar la negrita con acento de color (Dorado sobre Azul) */
+        .highlight {
+            font-weight: 700;
+            color: var(--color-primary-dark); /* Texto Oscuro */
+            background-color: var(--color-accent-gold); /* Fondo Dorado */
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+
+        /* Estilos específicos para la animación del chat */
+        #chat-container {
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(100%);
+            z-index: 1000;
+        }
+        #chat-container.open {
+            transform: translateY(0);
+        }
+
+        /* Estilo para mensajes del chat */
+        .message-box {
+            max-width: 80%;
+            border-radius: 1rem;
+        }
+
+        .sender-user {
+            background-color: #f0f4f8; /* Slate 50 para user */
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+
+        .sender-ai {
+            background-color: var(--color-secondary-light); /* Fondo del AI */
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-100 text-primary-dark">
+
+    <!-- Sección 1: TÍTULO Y ENGANCHE -->
+    <header class="bg-primary-dark text-white min-h-[70vh] flex items-center justify-center p-8 rounded-b-[40px] shadow-2xl">
+        <div class="text-center max-w-5xl">
+            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black mb-6 tracking-tight drop-shadow-lg" style="color:var(--color-accent-gold);">
+                Combustible de Plástico Cero
+            </h1>
+            <p class="text-4xl md:text-5xl font-extralight tracking-wider italic mb-6 text-gray-200">
+                La Decisión Ética y Rentable.
+            </p>
+            <!-- Resaltado Dorado -->
+            <p class="text-lg md:text-xl max-w-3xl mx-auto font-light mb-10 p-4 rounded-xl border-2 bg-black/20" style="border-color:var(--color-accent-gold); color: var(--color-secondary-light);">
+                Somos pioneros en la <span class="highlight">Pirólisis Catalítica</span> de plásticos de rechazo (el 90% de los residuos no reciclables) para convertirlos en diésel y gasolina homologados. <span class="highlight">Transformamos la contaminación en energía limpia y altamente rentable</span>, mitigando el impacto ambiental masivo a escala industrial.
+            </p>
+            
+            <div class="mt-12">
+                <span class="inline-block px-6 py-3 bg-accent-gold text-primary-dark font-extrabold rounded-xl text-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    +400 Millones de Toneladas (Plástico Anual Global) 🌍
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-12">
+
+        <!-- Sección 2: EL PROBLEMA QUE NOS MUEVE -->
+        <section class="my-20 p-8 bg-white rounded-2xl shadow-custom transform hover:translate-y-[-5px] transition duration-300">
+            <h2 class="text-4xl font-bold text-primary-dark mb-8 border-b-4 border-accent-gold pb-3">1. El Problema que nos Mueve</h2>
+            <div class="md:flex items-center space-y-8 md:space-y-0 md:space-x-16">
+                <div class="md:w-2/3 text-lg space-y-5">
+                    <p>El precio que pagamos por la conveniencia del plástico es demasiado alto. El mundo genera más de <span class="highlight">400 millones de toneladas</span> de residuos plásticos anualmente. 🗑️</p>
+                    <p class="font-extrabold text-3xl text-red-600">
+                        El 90% del plástico es "rechazo"
+                    </p>
+                    <p>
+                        Este material no reciclable termina en vertederos o en la quema ilegal, liberando contaminantes orgánicos persistentes como <span class="highlight">dioxinas y furanos</span>, principales causantes de enfermedades y cáncer. ☢️
+                    </p>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <!-- Diagrama de Proporción 90% vs 10% -->
+                    <div class="relative w-48 h-48 bg-red-100 rounded-full shadow-inner border-4 border-red-500">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-6xl font-black text-red-700">90%</span>
+                        </div>
+                        <div class="absolute top-0 left-0 w-24 h-24 bg-accent-gold rounded-full transform -translate-x-1/4 -translate-y-1/4 flex items-center justify-center border-4 border-primary-dark shadow-md">
+                            <span class="text-xl font-extrabold text-primary-dark">10%</span>
+                        </div>
+                        <p class="absolute bottom-[-2.5rem] text-sm text-gray-600 font-semibold w-full text-center">Rechazo vs. Reciclaje Efectivo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: PROPUESTA DE VALOR Y SOLUCIÓN (LA TECNOLOGÍA) -->
+        <section class="my-20 p-10 bg-secondary-light rounded-2xl shadow-custom transform hover:translate-y-[-5px] transition duration-300">
+            <h2 class="text-4xl font-bold text-primary-dark mb-8 border-b-4 border-primary-dark pb-3">2. Propuesta de Valor: De Residuo a Recurso</h2>
+            <div class="md:flex items-center space-y-8 md:space-y-0 md:space-x-16">
+                <div class="md:w-2/3 text-lg space-y-5">
+                    <p>Nuestra solución es la <span class="highlight">Pirólisis Catalítica</span>, una tecnología termoquímica rigurosa que convierte los plásticos de rechazo (PE, PP, PS) en combustible sin incineración. 🧪</p>
+                    <ul class="list-none space-y-3 font-semibold">
+                        <!-- Resaltado Dorado -->
+                        <li class="flex items-start text-primary-dark"><i class="fas fa-rocket mr-3 mt-1 text-2xl text-accent-gold"></i><span class="highlight">Rendimiento Extraordinario:</span> Conversión del <span class="font-extrabold text-xl">80% al 85%</span> en aceite pirolítico de alta calidad. 🚀</li>
+                        <li class="flex items-start text-primary-dark"><i class="fas fa-recycle mr-3 mt-1 text-2xl text-accent-gold"></i><span class="highlight">Aprovechamiento Total:</span> <span class="font-extrabold text-xl">98%</span> de la materia prima se convierte en producto final, energía o Negro de Carbono. ✨</li>
+                        <li class="flex items-start text-primary-dark"><i class="fas fa-flask mr-3 mt-1 text-2xl text-accent-gold"></i>El combustible es Diésel y Gasolina <span class="highlight">homologados</span>, listos para el mercado B2B. ⛽</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <!-- Diagrama de Flujo mejorado -->
+                    <div class="text-center space-y-3 p-4 bg-white rounded-xl shadow-lg border-2 border-primary-dark">
+                        <i class="fas fa-trash-restore-alt text-4xl text-gray-700"></i>
+                        <p class="text-primary-dark font-bold">Plástico de Rechazo (PE/PP/PS)</p>
+                        <i class="fas fa-chevron-down text-lg text-accent-gold"></i>
+                        <div class="px-4 py-2 bg-primary-dark text-white rounded-lg shadow-md font-extrabold text-xl">Pirólisis Catalítica</div>
+                        <i class="fas fa-chevron-down text-lg text-accent-gold"></i>
+                        <i class="fas fa-gas-pump text-5xl text-accent-gold"></i>
+                        <p class="text-sm text-primary-dark font-extrabold mt-1">Combustible (85%) + Negro de Carbono</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: USUARIO/CLIENTE Y MODELO DE NEGOCIOS -->
+        <section class="my-20 p-8 bg-white rounded-2xl shadow-custom transform hover:translate-y-[-5px] transition duration-300">
+            <h2 class="text-4xl font-bold text-primary-dark mb-8 border-b-4 border-accent-gold pb-3">3. Modelo de Negocios Defensivo y Rentable</h2>
+            <div class="md:flex items-center space-y-8 md:space-y-0 md:space-x-16">
+                <div class="md:w-1/2 text-lg space-y-5">
+                    <p class="font-semibold text-3xl text-primary-dark">Mercado <span class="highlight">B2B</span> (Flotas e Industria) 🏭</p>
+                    <p>Nuestro modelo se basa en un <span class="highlight">Doble Flujo de Ingresos</span>, lo que mitiga el riesgo de mercado y asegura rentabilidad:</p>
+                    <ul class="list-none space-y-3 mt-4">
+                        <li class="font-extrabold text-2xl text-primary-dark flex items-center"><i class="fas fa-percentage mr-3 text-accent-gold"></i>40% Ingresos: Gate Fee (Tarifa por gestionar el residuo) 💰</li>
+                        <li class="font-extrabold text-2xl text-primary-dark flex items-center"><i class="fas fa-oil-can mr-3 text-accent-gold"></i>60% Ingresos: Venta de Combustible ⛽</li>
+                    </ul>
+                    <p class="mt-6 font-extrabold text-4xl text-accent-gold">
+                        Margen Neto Proyectado: &gt;25%
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <!-- Gráfico de pastel SVG 40/60 -->
+                    <svg width="200" height="200" viewBox="0 0 100 100" class="shadow-xl rounded-full">
+                        <!-- El stroke-dasharray para 60% (Venta de Combustible) -->
+                        <circle r="45" cx="50" cy="50" fill="transparent" stroke="var(--color-primary-dark)" stroke-width="50"
+                            stroke-dasharray="60 100" transform="rotate(-90) translate(-100 0)" />
+                        <!-- El segundo sector para 40% (Gate Fee) -->
+                        <circle r="45" cx="50" cy="50" fill="transparent" stroke="var(--color-secondary-light)" stroke-width="50"
+                            stroke-dasharray="40 100" transform="rotate(270) translate(-100 0)" />
+                        <!-- Círculo central para texto -->
+                        <circle r="25" cx="50" cy="50" fill="white" class="shadow-md"/>
+                        <text x="50" y="53" text-anchor="middle" dominant-baseline="middle" class="text-xs font-bold" fill="var(--color-primary-dark)">
+                            Ingresos
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5 y 6: EQUIPO, ASK y Cierre -->
+        <section class="my-20 p-10 bg-white text-primary-dark rounded-2xl shadow-custom transform hover:translate-y-[-5px] transition duration-300">
+            <h2 class="text-4xl font-bold text-primary-dark mb-8 border-b-4 border-accent-gold pb-3">4. Equipo y Llamada a la Acción</h2>
+            <div class="md:flex items-center justify-between space-y-8 md:space-y-0">
+                <div class="md:w-1/2 space-y-5">
+                    <!-- Título que ahora usa el color Dark-Deep para contraste -->
+                    <h3 class="text-3xl font-extrabold text-primary-dark">El Equipo Listo para la Ejecución 🛠️</h3>
+                    <!-- Resaltado Dorado -->
+                    <p class="text-xl">Más de <span class="highlight">60 años de experiencia combinada</span> en ingeniería química, gestión de residuos y estrategia energética. Somos una solución de infraestructura esencial.</p>
+                    <!-- Subtítulo de Visión que ahora usa el color Green-Sat para un acento legible -->
+                    <p class="text-2xl font-extrabold pt-4 text-accent-gold">Visión: 👀</p>
+                    <p class="text-lg">Transformar el acto de repostar en una <span class="highlight">decisión ética</span> con transparencia total y trazabilidad. ♻️</p>
+                </div>
+                <div class="md:w-1/2 text-center">
+                    <!-- Título de ASK que ahora usa el color Dark-Deep para contraste -->
+                    <h3 class="text-4xl font-extrabold mb-6 text-primary-dark">Nuestro ASK:</h3>
+                    <!-- El bloque de ASK sigue siendo vibrante (bg-green-sat, text-dark-deep) para destacarse -->
+                    <div class="p-10 bg-accent-gold text-primary-dark rounded-2xl inline-block shadow-2xl transform hover:scale-105 transition duration-300">
+                        <span class="text-6xl md:text-7xl font-black">\$5 Millones USD</span>
+                        <p class="text-2xl font-semibold mt-3">(Para Fase II: Escalamiento y Replicación)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Chat Button (Esquina inferior derecha) -->
+    <button id="chat-button" class="fixed bottom-6 right-6 p-4 bg-accent-gold rounded-full shadow-2xl hover:bg-primary-dark hover:text-white transition duration-300 text-primary-dark z-50 transform hover:scale-110">
+        <i class="fas fa-robot text-3xl"></i>
+    </button>
+
+    <!-- Chat Container (Desplegable) -->
+    <div id="chat-container" class="fixed bottom-0 right-0 w-full max-w-sm h-full max-h-[500px] bg-white rounded-t-3xl shadow-2xl flex flex-col">
+        
+        <!-- Cabecera del Chat -->
+        <div class="bg-primary-dark text-white p-4 flex justify-between items-center rounded-t-3xl">
+            <h2 class="text-xl font-bold">Asistente Eco-Crudo Cero</h2>
+            <button id="chat-close" class="text-white hover:text-accent-gold transition text-xl"><i class="fas fa-times"></i></button>
+        </div>
+
+        <!-- Cuerpo de Mensajes -->
+        <div id="messages" class="flex-grow p-4 space-y-4 overflow-y-auto">
+            <!-- Mensaje inicial de la IA -->
+            <div class="message-box sender-ai p-3 shadow-md">
+                Hola! Soy el asistente de inversión de <span class="font-bold">Combustible de Plástico Cero</span>. ¿Tienes preguntas sobre nuestra tecnología, mercado o el *ask* de \$5M USD?
+            </div>
+            <!-- Los mensajes se agregarán aquí -->
+        </div>
+
+        <!-- Entrada del Chat -->
+        <div class="p-4 border-t border-gray-200 flex items-center">
+            <input type="text" id="chat-input" placeholder="Pregunta sobre la inversión..." class="flex-grow p-3 border border-gray-300 rounded-l-xl focus:outline-none focus:ring-2 focus:ring-accent-gold">
+            <button id="send-button" class="p-3 bg-accent-gold text-primary-dark rounded-r-xl hover:bg-primary-dark hover:text-white transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Configuración y lógica del Asistente Gemini
+        const chatButton = document.getElementById('chat-button');
+        const chatClose = document.getElementById('chat-close');
+        const chatContainer = document.getElementById('chat-container');
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+        const messagesContainer = document.getElementById('messages');
+
+        // --- Configuración de la API de Gemini ---
+        const apiKey = "AIzaSyBYq-IP52nn2wT025vw7u7_M5_jWqjLXvk"; // La plataforma proporciona esta clave en tiempo de ejecución.
+        const model = "gemini-2.5-flash-preview-05-20";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        
+        // System Prompt: define el rol y las reglas de la IA
+        const systemPrompt = "Actúa como el asistente de inversión (AI) del proyecto 'Combustible de Plástico Cero'. Tu misión es responder preguntas sobre el problema del plástico, la tecnología de Pirólisis Catalítica, el mercado B2B, nuestro modelo de ingresos (Gate Fee + Venta de Combustible), y la solicitud de inversión de $5M USD. Mantén un tono profesional, técnico y optimista. Tus respuestas deben ser concisas y siempre remitirse a la información del proyecto.";
+
+        // --- Funciones de Utilidad ---
+
+        // Función para renderizar un mensaje
+        function addMessage(text, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message-box p-3 shadow-md text-sm ${isUser ? 'sender-user' : 'sender-ai'} w-fit`;
+            messageDiv.innerText = text;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll automático al último mensaje
+        }
+
+        // Función para mostrar el indicador de carga de la IA
+        function showLoading() {
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'loading-indicator';
+            loadingDiv.className = 'message-box sender-ai p-3 shadow-md w-fit';
+            loadingDiv.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Escribiendo respuesta...';
+            messagesContainer.appendChild(loadingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Función para ocultar el indicador de carga
+        function hideLoading() {
+            const loadingDiv = document.getElementById('loading-indicator');
+            if (loadingDiv) {
+                loadingDiv.remove();
+            }
+        }
+
+        // --- Lógica del Chat ---
+
+        // Toggle del chat (abrir/cerrar)
+        chatButton.addEventListener('click', () => {
+            chatContainer.classList.toggle('open');
+            chatButton.classList.toggle('hidden');
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatContainer.classList.remove('open');
+            chatButton.classList.remove('hidden');
+        });
+
+        // Envío de mensaje al presionar el botón o Enter
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Función principal para llamar a la API de Gemini
+        async function fetchGeminiResponse(userMessage, retries = 0) {
+            showLoading();
+            sendButton.disabled = true;
+
+            const payload = {
+                contents: [{ parts: [{ text: userMessage }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+                // Usamos Google Search para grounding, aunque el system prompt limita el scope
+                tools: [{ "google_search": {} }]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.status === 429 && retries < 5) {
+                    // Manejo de Tasa Límite (Exponential Backoff)
+                    const delay = Math.pow(2, retries) * 1000 + Math.random() * 1000;
+                    console.warn(`Tasa límite alcanzada. Reintentando en ${delay / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return await fetchGeminiResponse(userMessage, retries + 1);
+                }
+
+                if (!response.ok) {
+                    throw new Error(`Error de API: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, no pude obtener una respuesta clara de la IA.";
+                
+                hideLoading();
+                addMessage(text, false);
+
+            } catch (error) {
+                hideLoading();
+                console.error("Error al llamar a la API de Gemini:", error);
+                addMessage("Lo siento, hubo un error de conexión o de la IA. Por favor, inténtalo de nuevo.", false);
+            } finally {
+                sendButton.disabled = false;
+            }
+        }
+
+        // Función que maneja el envío del mensaje por el usuario
+        function sendMessage() {
+            const userMessage = chatInput.value.trim();
+            if (userMessage === "") return;
+
+            addMessage(userMessage, true);
+            chatInput.value = ""; // Limpiar input
+
+            fetchGeminiResponse(userMessage);
+        }
+    </script>
+</body>
+</html>
